@@ -4,7 +4,7 @@ Form created using ReactJS + TypeScript.
 Node version: v16.14.0
 Npm Version: 8.15.0
 
-To recreate localy:
+To recreate locally:
 
 1. Clone the repository
 2. Install dependencies for e.g using: "npm i"
