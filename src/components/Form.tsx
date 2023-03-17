@@ -314,7 +314,7 @@ const DishForm: React.FC<{}> = () => {
 									Slices of bread
 								</Typography>
 								<Controller
-									name='diameter'
+									name='slices_of_bread'
 									control={control}
 									rules={{ required: true }}
 									render={({ field: { onChange, value } }) => (
@@ -328,7 +328,7 @@ const DishForm: React.FC<{}> = () => {
 									)}
 								/>
 								<Box>
-									{errors.diameter && (
+									{errors.slices_of_bread && (
 										<Typography variant='caption' color='error'>
 											Please add a number of slices.
 										</Typography>
