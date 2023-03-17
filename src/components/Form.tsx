@@ -47,8 +47,8 @@ const DishForm: React.FC<{}> = () => {
 	};
 
 	const onSubmit = (data: FormValues) => {
-		const time = `${data.hours ? data.hours : "00"}:${data.minutes ? data.hours : "00"}:${
-			data.seconds ? data.hours : "00"
+		const time = `${data.hours ? data.hours : "00"}:${data.minutes ? data.minutes : "00"}:${
+			data.seconds ? data.seconds : "00"
 		}`;
 
 		const id = new Date().valueOf();
@@ -319,7 +319,7 @@ const DishForm: React.FC<{}> = () => {
 									rules={{ required: true }}
 									render={({ field: { onChange, value } }) => (
 										<TextField
-											InputProps={{ inputProps: { min: 0, max: 10 } }}
+											InputProps={{ inputProps: { min: 1 } }}
 											type='number'
 											onChange={onChange}
 											value={value || ""}
