@@ -53,7 +53,6 @@ const DishForm: React.FC<{}> = () => {
 		}`;
 
 		const id = uuidv4();
-		console.log(checkTime(time));
 		if (checkTime(time)) {
 			const obj: FormType = {
 				name: data.name,
