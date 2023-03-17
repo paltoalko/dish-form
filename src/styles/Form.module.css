@@ -1,0 +1,53 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3em;
+	margin: 1em;
+	flex-direction: column;
+}
+
+.form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.slider {
+	min-width: 300px;
+}
+.textField input {
+	color: black;
+	height: 10px;
+	font-size: 1em;
+	font-weight: 200;
+	min-width: 200px;
+}
+
+.topForm {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 100%;
+	margin: 1.25em;
+}
+
+.bottomForm {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1em;
+
+	flex-direction: column;
+	min-width: 300px;
+}
+
+.labelText {
+	margin: 0.5em;
+}
