@@ -5,6 +5,7 @@ interface IProps {
 	postForm: (data: FormType) => Promise<void>;
 	loading?: boolean;
 	error?: boolean;
+	success?: boolean;
 }
 
 interface Props {
@@ -16,6 +17,7 @@ export const FormContext = createContext<IProps>(null!);
 const FormWrapper: React.FC<Props> = ({ children }) => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
+	const [success, setSuccess] = useState(false);
 	const postForm = async (data: FormType) => {
 		setLoading(true);
 		const settings = {
@@ -25,11 +27,13 @@ const FormWrapper: React.FC<Props> = ({ children }) => {
 		};
 
 		try {
-			const fetchResponse = await fetch("https://frosty-wood-6558.getsandbox.com:443/dishes", settings);
+			const fetchResponse = await fetch("https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/", settings);
 			const data = await fetchResponse.json();
-			console.log(data, "datat from post");
+			setLoading(false);
+			setSuccess(true);
 			return data;
 		} catch (err) {
+			setSuccess(false);
 			setError(true);
 			console.error(err);
 			setLoading(false);
@@ -37,7 +41,7 @@ const FormWrapper: React.FC<Props> = ({ children }) => {
 		}
 	};
 
-	return <FormContext.Provider value={{ postForm, loading, error }}>{children}</FormContext.Provider>;
+	return <FormContext.Provider value={{ postForm, loading, error, success }}>{children}</FormContext.Provider>;
 };
 
 export default FormWrapper;
