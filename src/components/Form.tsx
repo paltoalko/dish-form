@@ -13,7 +13,6 @@ import {
 	CircularProgress,
 	Alert,
 } from "@mui/material";
-import { v4 as uuidv4 } from "uuid";
 import { hourMarks, minuteMarks, secondsMarks, spiceMarks } from "../helpers/constants";
 import { FormContext } from "./api/formHandler";
 import { FormType, FormValues } from "helpers/typings";
@@ -32,7 +31,7 @@ const DishForm: React.FC<{}> = () => {
 
 	const watchDataType = watch("type");
 	const [timeError, setTimeError] = useState(false);
-	const { postForm, loading, error } = useContext(FormContext);
+	const { postForm, loading, error, success } = useContext(FormContext);
 	useEffect(() => {
 		if (watchDataType) {
 			register("type");
@@ -52,11 +51,11 @@ const DishForm: React.FC<{}> = () => {
 			data.seconds ? data.hours : "00"
 		}`;
 
-		const id = uuidv4();
+		const id = new Date().valueOf();
 		if (checkTime(time)) {
 			const obj: FormType = {
 				name: data.name,
-				time: time,
+				preparation_time: time,
 				type: data.type,
 				no_of_slices: data.no_of_slices,
 				diameter: data.diameter,
@@ -78,6 +77,12 @@ const DishForm: React.FC<{}> = () => {
 					{error && (
 						<Alert severity='error' sx={{ width: "100%", m: "1em" }}>
 							There was an error while posting data.
+						</Alert>
+					)}
+
+					{success && (
+						<Alert severity='success' sx={{ width: "100%", m: "1em" }}>
+							Data has been sent successfully.
 						</Alert>
 					)}
 					<Typography variant='h3'>Dish Form</Typography>
