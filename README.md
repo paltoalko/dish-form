@@ -14,5 +14,4 @@ To recreate locally:
 # Used libraries
 
 - MaterialUI
-- Uuidv4
 - React Hook Form
