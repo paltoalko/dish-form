@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/dish-form/static/css/main.b0017d94.css",
-    "main.js": "/dish-form/static/js/main.ad9bfe68.js",
+    "main.js": "/dish-form/static/js/main.246ac88d.js",
     "index.html": "/dish-form/index.html",
     "main.b0017d94.css.map": "/dish-form/static/css/main.b0017d94.css.map",
-    "main.ad9bfe68.js.map": "/dish-form/static/js/main.ad9bfe68.js.map"
+    "main.246ac88d.js.map": "/dish-form/static/js/main.246ac88d.js.map"
   },
   "entrypoints": [
     "static/css/main.b0017d94.css",
-    "static/js/main.ad9bfe68.js"
+    "static/js/main.246ac88d.js"
   ]
 }
